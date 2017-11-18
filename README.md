@@ -1,0 +1,21 @@
+# 1000
+## 1000 Esoteric Language
+1000 (eight) is an esoteric programming language/engine with eight distinct operations expressed in a symbolic alphabet.
+
+Machine "M" = {instruction read head, output read/write head, instruction tape, output tape}
+
+Symbolic Instructional Alphabet "A" = {0, 1, :, ^, M, m, ?, !}
+0 - 0 bit. Instructional read head moves right if a 0 is read out of context.
+1 - 1 bit. Instructional read head moves right if a 1 is read out of context.
+: - Instruction terminator.
+^ - Output write token. Write all bits after this instruction until the instruction terminator.
+M - Instruction tape move token. First bit after "M" determines left (0) or right (1). Read
+the remaining bits (rightmost is MSB) until the instruction terminator as numbers. Move that many
+bits in the given direction after the terminator.
+m - Output tape move token. Same as above.
+? - Conditional token. If the output pointer is pointing at a 1 continue execution
+after the next instruction terminator, otherwise read the next bits as an instruction move
+instruction and execute.
+! - Conditional token. If the output pointer is pointing at a 1 continue execution
+after the next instruction terminator, otherwise read the next bits as an instruction move
+instruction and execute.
